@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/styles.scss"],"names":[],"mappings":"AACI;EACI","file":"styles.c86c3119.css","sourceRoot":"../src","sourcesContent":["body{\n    h1{\n        color: red;\n    }\n}"]}
