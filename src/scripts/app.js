@@ -17,10 +17,11 @@ keys.addEventListener("click", (e) => {
 
     if (!action) {
       if (displayedNum === "0" || previousKeyType === "operator") {
-        display.textContent = keyContent;   
+        display.textContent = keyContent;
       } else {
         display.textContent = displayedNum + keyContent;
       }
+      calculator.dataset.previousKey = "number";
     }
 
     if (
@@ -35,12 +36,17 @@ keys.addEventListener("click", (e) => {
       calculator.dataset.operator = action;
     }
 
-    if (action === "decimal") {
-      display.textContent = displayedNum + ".";
-    }
+   if (action === "decimal") {
+     if (!displayedNum.includes(".")) {
+       display.textContent = displayedNum + ".";
+     } else if (previousKeyType === "operator") {
+       display.textContent = "0.";
+     }  
+     calculator.dataset.previousKeyType = "decimal";
+   }
 
     if (action === "clear") {
-      console.log("clear key!");
+      calculator.dataset.previousKeyType = "clear";
     }
 
     if (action === "calculate") {
@@ -49,6 +55,7 @@ keys.addEventListener("click", (e) => {
       const secondValue = parseFloat(displayedNum);
 
       display.textContent = calculate(firstValue, operator, secondValue);
+      calculator.dataset.previousKeyType = "calculate";
     }
   }
 });
