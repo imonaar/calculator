@@ -21,7 +21,9 @@ body {
 
   background-color: #3a4663;
 
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
+
+  padding-top: 4rem;
 }
 
 .content {
@@ -42,7 +44,10 @@ button {
   padding: 0;
   margin: 0;
 
-  background-color: #EAE3DC;
-  box-shadow: inset 0px -4px 0px #B3A497;
-;
+  background-color: #eae3dc;
+  box-shadow: inset 0px -4px 0px #b3a497;
+}
+
+h1 {
+  margin: 0;
 }

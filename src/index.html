@@ -8,17 +8,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-    href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
     />
     <script type="module" src="./scripts/app.js"></script>
     <title>Document</title>
   </head>
   <body>
     <div class="content">
-      <header></header>
+      <header class="header">
+        <nav>
+          <h1>calc</h1>
+          <div>
+            <label for="check"> Theme</label>
+            <input
+              name="check"
+              type="checkbox"
+              class="gui-switch"
+              role="switch"
+            />
+          </div>
+        </nav>
+      </header>
       <main>
         <div class="calculator">
+          <!-- consider input type number -->
           <div class="calculator__display">0</div>
           <div class="calculator__keys">
             <button>7</button>
