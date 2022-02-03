@@ -18,6 +18,7 @@ keys.addEventListener("click", (e) => {
     if (!action) {
       if (displayedNum === "0" || previousKeyType === "operator") {
         display.textContent = keyContent;
+        calculator.dataset.previousKeyType = "";
       } else {
         display.textContent = displayedNum + keyContent;
       }
@@ -30,23 +31,47 @@ keys.addEventListener("click", (e) => {
       action === "multiply" ||
       action === "divide"
     ) {
+      const firstValue = calculator.dataset.firstValue;
+      const operator = calculator.dataset.operator;
+      const secondValue = displayedNum;
+
+      if (firstValue && operator && previousKeyType !== "operator") {
+        const calcValue = calculate(firstValue, operator, secondValue);
+        display.textContent = calcValue;
+
+        // Update calculated value as firstValue
+        calculator.dataset.firstValue = calcValue;
+      } else {
+        // If there are no calculations, set displayedNum as the firstValue
+        calculator.dataset.firstValue = displayedNum;
+      }
+
       key.classList.add("is-depressed");
       calculator.dataset.previousKeyType = "operator";
-      calculator.dataset.firstValue = displayedNum;
       calculator.dataset.operator = action;
     }
 
-   if (action === "decimal") {
-     if (!displayedNum.includes(".")) {
-       display.textContent = displayedNum + ".";
-     } else if (previousKeyType === "operator") {
-       display.textContent = "0.";
-     }  
-     calculator.dataset.previousKeyType = "decimal";
-   }
+    if (action === "decimal") {
+      // if (!displayedNum.includes(".")) {
+      //   display.textContent = displayedNum + ".";
+      // } else if (previousKeyType === "operator") {
+      //   display.textContent = "0.";
+      // }
+
+      if (!displayedNum.includes(".")) {
+        display.textContent = displayedNum + ".";
+      }
+
+      if (previousKeyType === "operator") {
+        display.textContent = "0.";
+      }
+
+      calculator.dataset.previousKeyType = "decimal";
+    }
 
     if (action === "clear") {
       calculator.dataset.previousKeyType = "clear";
+      display.textContent = "0";
     }
 
     if (action === "calculate") {
@@ -60,20 +85,20 @@ keys.addEventListener("click", (e) => {
   }
 });
 
-function calculate(n1, operator, n2) {
-  let result;
-  switch (operator) {
-    case "add":
-      result = n1 + n2;
-    case "subtract":
-      result = n1 - n2;
-    case "multiply":
-      result = n1 * n2;
-    case "divide":
-      result = n1 / n2;
-    default:
-      return result;
+const calculate = (n1, operator, n2) => {
+  let result = "";
+
+  if (operator === "add") {
+    result = n1 + n2;
+  } else if (operator === "subtract") {
+    result = n1 - n2;
+  } else if (operator === "multiply") {
+    result = n1 * n2;
+  } else if (operator === "divide") {
+    result = n1 / n2;
   }
 
   return result;
-}
+};
+
+//switch statement failed here. why?

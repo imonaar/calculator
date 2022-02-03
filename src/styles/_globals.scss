@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: #3a4663;
+
+  font-family: 'Spartan', sans-serif;
+}
+
+.content {
+  width: 100%;
+  max-width: 33.75rem;
+}
+
+button {
+  font-size: 1.25rem;
+  line-height: 22px;
+  letter-spacing: -0.33px;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+  border-radius: 10px;
+
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  background-color: #EAE3DC;
+  box-shadow: inset 0px -4px 0px #B3A497;
+;
+}
