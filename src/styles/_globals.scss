@@ -139,6 +139,10 @@ body {
 .content {
   width: 100%;
   max-width: 33.75rem;
+
+  @include mobile{
+    max-width: 23.4375rem;
+  }
 }
 
 button {
