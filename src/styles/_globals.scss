@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-bg: hsl(222, 26%, 31%);
+  --display-bg: hsl(224, 36%, 15%);
+  --keypad-bg: hsl(223, 31%, 20%);
+
+  --text-1: white;
+  --color-2: hsl(60, 10%, 19%);
+
+  --key-bg: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+  --key-hover: #fffffe;
+
+  --calculate-key: hsl(25, 98%, 40%);
+  --calculate-key-shadow: hsl(25, 99%, 27%);
+  --calculate-key-hover: #f96b5b;
+
+  --reset-key: #637198;
+  --reset-key-shadow: #404e73;
+  --reset-key-hover: #a2b2e1;
+
+  --switch-track: hsl(223, 31%, 20%);
+  --switch-btn: #d03f2f;
+}
+
 html {
   block-size: 100%;
   inline-size: 100%;
@@ -19,11 +43,13 @@ body {
   display: flex;
   justify-content: center;
 
-  background-color: #3a4663;
+  background-color: var(--main-bg);
 
   font-family: "Spartan", sans-serif;
 
   padding-top: 4rem;
+
+  color: var(--text-1);
 }
 
 .content {
@@ -44,8 +70,33 @@ button {
   padding: 0;
   margin: 0;
 
-  background-color: #eae3dc;
-  box-shadow: inset 0px -4px 0px #b3a497;
+  background-color: var(--key-bg);
+  box-shadow: inset 0px -4px 0px var(--key-shadow);
+
+  &:hover {
+    background-color: var(--key-hover);
+  }
+
+  &[data-action="delete"],
+  &[data-action="clear"] {
+    background-color: var(--reset-key);
+    box-shadow: inset 0px -4px 0px var(--reset-key-shadow);
+    color: white;
+
+    &:hover {
+      background-color: var(--reset-key-hover);
+    }
+  }
+
+  &[data-action="calculate"] {
+    background-color: var(--calculate-key);
+    box-shadow: inset 0px -4px 0px var(--calculate-key-shadow);
+    color: white;
+
+    &:hover {
+      background-color: var(--calculate-key-hover);
+    }
+  }
 }
 
 h1 {

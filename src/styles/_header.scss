@@ -4,47 +4,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
 
     div {
       display: flex;
       align-items: center;
       gap: 1.25rem;
-
-      label {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 0.75rem;
-        line-height: 14px;
-      }
-
-      .gui-switch {
-        appearance: none;
-        margin: 0;
-        padding: 0;
-
-        inline-size: 4.4375rem;
-        block-size: 1.625rem;
-        border-radius: 0.8125rem;
-        background-color: #242d44;
-
-        position: relative;
-        cursor: pointer;
-
-        &::before {
-          content: "";
-          position: absolute;
-
-          block-size: 1rem;
-          inline-size: 1rem;
-          border-radius: 100%;
-          background-color: #d03f2f;
-
-          top: 50%;
-          transform: translateY(-50%);
-          left: 5px;
-        }
-      }
     }
   }
 }
@@ -52,7 +16,7 @@
 //https://jsfiddle.net/nop1984/r54mejq6/
 
 .theme-toggle {
-  background-color: #242d44;
+  background-color: var(--switch-track);
   border-radius: 13px;
   padding: 5px;
   width: 72px;
@@ -108,9 +72,10 @@ input[type="radio"] {
   border-radius: 100%;
   transition: opacity 0.5s ease;
   opacity: 0.3;
+  cursor: pointer;
 }
 
 .custom-radio-button input:checked {
   opacity: 1;
-  background-color: #d03f2f;
+  background-color: var(--switch-btn);
 }
