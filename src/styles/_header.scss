@@ -1,5 +1,6 @@
 .header {
   margin-bottom: 2rem;
+  color: var(--main-color);
   nav {
     display: flex;
     justify-content: space-between;
@@ -73,9 +74,14 @@ input[type="radio"] {
   transition: opacity 0.5s ease;
   opacity: 0.3;
   cursor: pointer;
+
 }
 
 .custom-radio-button input:checked {
   opacity: 1;
   background-color: var(--switch-btn);
+
+  // &:hover{
+  //   background-color: var(--switch-btn-hover);
+  // }
 }

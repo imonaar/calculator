@@ -9,8 +9,8 @@
   --display-bg: hsl(224, 36%, 15%);
   --keypad-bg: hsl(223, 31%, 20%);
 
-  --text-1: white;
-  --color-2: hsl(60, 10%, 19%);
+  --key-color: hsl(60, 10%, 19%);
+  --main-color: white;
 
   --key-bg: hsl(45, 7%, 89%);
   --key-shadow: hsl(35, 11%, 61%);
@@ -19,6 +19,7 @@
   --calculate-key: hsl(25, 98%, 40%);
   --calculate-key-shadow: hsl(25, 99%, 27%);
   --calculate-key-hover: #f96b5b;
+  --calculate-color: #ffffff;
 
   --reset-key: #637198;
   --reset-key-shadow: #404e73;
@@ -50,6 +51,84 @@ body {
   padding-top: 4rem;
 
   color: var(--text-1);
+
+  &.them-1 {
+    --main-bg: hsl(222, 26%, 31%);
+    --display-bg: hsl(224, 36%, 15%);
+    --keypad-bg: hsl(223, 31%, 20%);
+
+    --key-color: hsl(60, 10%, 19%);
+    --main-color: white;
+
+    --key-bg: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --key-hover: #fffffe;
+
+    --calculate-key: hsl(25, 98%, 40%);
+    --calculate-key-shadow: hsl(25, 99%, 27%);
+    --calculate-key-hover: #f96b5b;
+    --calculate-color: #ffffff;
+
+    --reset-key: #637198;
+    --reset-key-shadow: #404e73;
+    --reset-key-hover: #a2b2e1;
+
+    --switch-track: hsl(223, 31%, 20%);
+    --switch-btn: #d03f2f;
+    --switch-btn-hover: #f96b5b;
+  }
+
+  &.theme-2 {
+    --main-bg: hsl(0, 0%, 90%);
+    --display-bg: hsl(0, 0%, 93%);
+    --keypad-bg: hsl(0, 5%, 81%);
+
+    --key-color: #36362c;
+    --main-color: #36362c;
+
+    --key-bg: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --key-hover: #fffffe;
+
+    --calculate-key: hsl(25, 98%, 40%);
+    --calculate-key-shadow: hsl(25, 99%, 27%);
+    --calculate-key-hover: #f96b5b;
+    --calculate-color: #ffffff;
+
+    --reset-key: hsl(185, 42%, 37%);
+    --reset-key-shadow: hsl(185, 58%, 25%);
+    --reset-key-hover: #62b5bc;
+
+    --switch-track: hsl(0, 5%, 81%);
+    --switch-btn: #c85402;
+    --switch-btn-hover: #ff8a38;
+  }
+
+  &.theme-3 {
+    --main-bg: hsl(268, 75%, 9%);
+    --display-bg: hsl(268, 71%, 12%);
+    --keypad-bg: hsl(268, 71%, 12%);
+
+    --key-color: #ffe53d;
+    --main-color: #ffe53d;
+
+    --key-bg: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+    --key-hover: #6c35ac;
+
+    --calculate-key: hsl(176, 100%, 44%);
+    --calculate-key-shadow: hsl(177, 92%, 70%);
+    --calculate-key-hover: #93fff8;
+    --calculate-color: #1a2327;
+
+    --reset-key: hsl(281, 89%, 26%);
+    --reset-key-shadow: hsl(285, 91%, 52%);
+    --reset-key-hover: #8631af;
+
+    --switch-track: hsl(268, 71%, 12%);
+    --switch-btn: hsl(176, 100%, 44%);
+    --switch-btn-hover: #93fff8;
+  }
 }
 
 .content {
@@ -72,6 +151,7 @@ button {
 
   background-color: var(--key-bg);
   box-shadow: inset 0px -4px 0px var(--key-shadow);
+  color: var(--key-color);
 
   &:hover {
     background-color: var(--key-hover);
@@ -91,7 +171,7 @@ button {
   &[data-action="calculate"] {
     background-color: var(--calculate-key);
     box-shadow: inset 0px -4px 0px var(--calculate-key-shadow);
-    color: white;
+    color: var(--calculate-color);
 
     &:hover {
       background-color: var(--calculate-key-hover);
