@@ -6,6 +6,12 @@
     justify-content: space-between;
     align-items: center;
 
+    h1 {
+      font-size: 2rem;
+      line-height: 35px;
+      letter-spacing: -0.53px;
+    }
+
     div {
       display: flex;
       align-items: center;
@@ -34,6 +40,7 @@
   &::before {
     content: "1";
     position: absolute;
+    font-size: 12px;
 
     top: -26px;
     left: 50%;
@@ -74,7 +81,6 @@ input[type="radio"] {
   transition: opacity 0.5s ease;
   opacity: 0.3;
   cursor: pointer;
-
 }
 
 .custom-radio-button input:checked {

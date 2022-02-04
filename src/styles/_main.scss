@@ -16,6 +16,12 @@
   text-align: right;
   max-width: 33.75rem;
   overflow: hidden;
+
+  @include mobile{
+    font-size: 2rem;
+    line-height: 35px;
+    padding: 1.5rem;
+  }
 }
 
 .calculator__keys {
@@ -27,6 +33,15 @@
   gap: 1.5rem;
   background-color: var(--keypad-bg);
   border-radius: 0.3125rem;
+
+  @include mobile {
+    grid-template-columns: repeat(4, 3.75rem);
+    grid-template-rows: repeat(5, 4rem);
+    gap: 0.8125rem;
+    font-size: 1.75rem;
+    line-height: 1.9375rem;
+    padding: 1.5rem;
+  }
 
   button {
     &.reset-span {
