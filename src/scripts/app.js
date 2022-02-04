@@ -2,6 +2,21 @@ const calculator = document.querySelector(".calculator");
 const keys = calculator.querySelector(".calculator__keys");
 const display = document.querySelector(".calculator__display");
 
+const radioBtns = document.querySelectorAll(".js-radio");
+const body = document.body;
+
+radioBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const theme = btn.dataset.theme;
+
+    body.classList.remove("theme-1");
+    body.classList.remove("theme-2");
+    body.classList.remove("theme-3");
+
+    body.classList.add(theme);
+  });
+});
+
 keys.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
     const key = e.target;
@@ -113,4 +128,3 @@ const calculate = (n1, operator, n2) => {
   if (operator === "multiply") return firstNum * secondNum;
   if (operator === "divide") return firstNum / secondNum;
 };
-

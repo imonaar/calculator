@@ -14,19 +14,27 @@
     <script type="module" src="./scripts/app.js"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body class="theme-1">
     <div class="content">
       <header class="header">
         <nav>
           <h1>calc</h1>
           <div>
             <label for="check"> Theme</label>
-            <input
-              name="check"
-              type="checkbox"
-              class="gui-switch"
-              role="switch"
-            />
+
+            <div class="theme-toggle">
+              <label class="custom-radio-button">
+                <input id="first" name="toggle-state" type="radio" data-theme ="theme-1" checked class="js-radio" />
+              </label>
+
+              <label class="custom-radio-button">
+                <input id="second" name="toggle-state" type="radio" data-theme ="theme-2"  class="js-radio"/>
+              </label>
+
+              <label class="custom-radio-button">
+                <input id="third" name="toggle-state" type="radio"  data-theme ="theme-3" class="js-radio" />
+              </label>
+            </div>
           </div>
         </nav>
       </header>
