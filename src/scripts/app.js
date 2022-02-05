@@ -44,7 +44,13 @@ class Calculator {
           calculator.dataset
         );
 
-        display.textContent = resultString;
+        const result =
+          resultString.toString().includes(".") &&
+          resultString.toString().length > 10
+            ? resultString.toFixed(8)
+            : resultString;
+
+        display.textContent = result.toLocaleString();
 
         this.updateCalculatorState(key, calculator, resultString, displayedNum);
       }
@@ -69,7 +75,6 @@ class Calculator {
     }
 
     if (action === "decimal") {
-      
       if (previousKeyType === "operator" || previousKeyType === "calculate")
         return "0.";
       if (!displayedNum.includes(".")) return displayedNum + ".";
@@ -112,6 +117,10 @@ class Calculator {
 
     calculator.dataset.previousKeyType = keyType;
 
+    Array.from(key.parentNode.children).forEach((k) =>
+      k.classList.remove("is-depressed")
+    );
+
     if (keyType === "number") {
       calculator.dataset.previousKeyType = "number";
     }
@@ -120,6 +129,7 @@ class Calculator {
     }
 
     if (keyType === "operator") {
+      key.classList.add("is-depressed");
       calculator.dataset.operator = key.dataset.action;
       calculator.dataset.firstValue =
         firstValue &&

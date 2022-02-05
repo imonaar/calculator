@@ -151,3 +151,5 @@ const calculate = (n1, operator, n2) => {
   if (operator === "multiply") return firstNum * secondNum;
   if (operator === "divide") return firstNum / secondNum;
 };
+
+https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/

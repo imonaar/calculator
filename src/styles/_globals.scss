@@ -140,7 +140,7 @@ body {
   width: 100%;
   max-width: 33.75rem;
 
-  @include mobile{
+  @include mobile {
     max-width: 23.4375rem;
   }
 }
@@ -161,6 +161,10 @@ button {
   background-color: var(--key-bg);
   box-shadow: inset 0px -4px 0px var(--key-shadow);
   color: var(--key-color);
+
+  &.is-depressed {
+    background-color: var(--key-hover);
+  }
 
   &:hover {
     background-color: var(--key-hover);
