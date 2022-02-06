@@ -48,13 +48,13 @@ body {
 
   font-family: "Spartan", sans-serif;
 
-  padding-top: 4rem;
+  padding-block: 6rem;
   padding-inline: 1.5rem;
 
   color: var(--text-1);
 
   @include mobile {
-    padding-block: 2.75rem;
+    padding-block: 1.75rem;
   }
 
   &.theme-1 {
