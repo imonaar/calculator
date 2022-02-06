@@ -170,6 +170,10 @@ button {
     background-color: var(--key-hover);
   }
 
+  &:active{
+    transform: scale(0.97);
+  }
+
   &[data-action="delete"],
   &[data-action="clear"] {
     background-color: var(--reset-key);
